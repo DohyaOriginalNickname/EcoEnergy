@@ -1,4 +1,5 @@
 import './Header.css'
+import Button from '../uikit/button/button'
 
 export default function Header(props) {
     return (
@@ -8,8 +9,8 @@ export default function Header(props) {
             </section>
             <section>
                 <nav className="navigation">
-                    <a className='link' onClick={()=> props.changeComponent(true)}>First page</a>
-                    <a className='link' onClick={()=> props.changeComponent(false)}>Second page</a>
+                    <Button changeComponent={()=>props.changeComponent(true)} text={'First Page'}/>
+                    <Button changeComponent={()=>props.changeComponent(false)} text={'Second Page'}/>
                 </nav>
             </section>
         </header>

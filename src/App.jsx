@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './App.css';
 import Header from './header/Header.jsx';
+import FirstPage from './firstPage/firstPage';
+import SecondPage from './secondPage/secondPage';
 
 function App() {
   const [page, setPage] = useState(true);
@@ -10,7 +12,10 @@ function App() {
   return (
     <>
       <Header changeComponent={changeComponent} />
-      { page ? <div>First page</div> : <div>Second Page</div> }
+      
+      <main className='main'>
+        { page ? <FirstPage changeComponent={changeComponent}/> : <SecondPage/> }
+      </main>
     </>
   )
 }

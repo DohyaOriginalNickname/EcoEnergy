@@ -1,0 +1,12 @@
+.link {
+    border: .1px solid black;
+    background-color: red;
+    width: 150px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.link:hover {
+    color: white;
+    background-color: rgb(253, 49, 49);
+}
