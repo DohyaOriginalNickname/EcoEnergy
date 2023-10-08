@@ -1,0 +1,29 @@
+.header {
+    margin: 0 10px;
+    display: flex;
+    background-color: #3DEC00;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.header .logo {
+}
+
+.header .navigation {
+    display: flex;
+    gap: 80px;
+}
+
+.header .navigation .link {
+    border: .1px solid black;
+    background-color: red;
+    width: 150px;
+    line-height: 25px;
+}
+
+.header .navigation .link:hover {
+    color: white;
+    background-color: rgb(253, 49, 49);
+}
