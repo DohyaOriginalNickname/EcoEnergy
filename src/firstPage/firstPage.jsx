@@ -20,7 +20,7 @@ export default function FirstPage(props) {
             </section>
 
             <section className='button'>
-                <Button changeComponent={() => props.changeComponent(false)} text={'Start calculate'} />
+                <Button func={() => props.changeComponent(false)} text={'Start calculate'} />
             </section>
         </>
     )
