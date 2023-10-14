@@ -1,0 +1,21 @@
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+caption {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: .6px;
+}
+
+th,
+td {
+    padding: 20px;
+    border: 2px solid black;
+    text-align: center;
+    letter-spacing: .6px;
+}
