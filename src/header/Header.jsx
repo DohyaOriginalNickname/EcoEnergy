@@ -7,8 +7,8 @@ export default function Header(props) {
             <img src="../assets/logo.png" alt="LOGO" className="logo" />
             <section className='nav'>
                 <nav className="navigation">
-                    <Button func={() => props.changeComponent(true)} text={'First Page'} />
-                    <Button func={() => props.changeComponent(false)} text={'Second Page'} />
+                    <Button func={() => props.changeComponent(0)} text={'First Page'} />
+                    <Button func={() => props.changeComponent(1)} text={'Second Page'} />
                 </nav>
             </section>
         </header>
