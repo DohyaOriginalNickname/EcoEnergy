@@ -3,9 +3,7 @@ import Button from '../uikit/button/button';
 import './secondPage.css'
 
 
-export default function SecondPage() {
-
-    
+export default function SecondPage(props) {
 
     const [array, setArray] = useState([]);
     const [state, setState] = useState(false);
@@ -13,9 +11,13 @@ export default function SecondPage() {
     const arr = ['холодос', 'condёr', 'pylesos'];
 
     const func = () => setState(state => !state);
-    const changeArr = (data) => {
+    const changeArr = (data, status) => {
         if (array.map(el => el.id).includes(data.id)) {
-            setArray(array => [...array.filter(item => item.id !== data.id), data])
+            if (status) {
+                setArray(array => [...array.filter(item => item.id !== data.id), data])
+            }else{
+                setArray(array => [...array.filter(item => item.id !== data.id)])
+            }
         } else {
             setArray(array => [...array, data])
         }
@@ -36,13 +38,13 @@ export default function SecondPage() {
             </section>
 
             <section className='button'>
-                <Button text={'Aadasdasd'} />
+                <Button text={'Расчитать'} func={()=>props.changeComponent(3)}/>
             </section>
         </>
     )
 }
 
-function ListItem({ dataItem, changeArr, id }) {
+function ListItem({ dataItem, changeArr, id}) {
 
     const [field, setField] = useState(false);
     const [kVat, setKvat] = useState('');
@@ -50,10 +52,11 @@ function ListItem({ dataItem, changeArr, id }) {
 
 
     useEffect(() => {
+        console.log(field);
         if (kVat.length > 0 && time.length > 0) {
-            changeArr({ id, kVat, time })
+            changeArr({ id, kVat, time }, field)
         }
-    }, [kVat, time])
+    }, [kVat, time, field])
 
     const change = () => {
         setField((field) => !field);
