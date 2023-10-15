@@ -1,4 +1,4 @@
-import { useState ,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Button from '../uikit/button/button';
 import './secondPage.css'
 
@@ -6,16 +6,14 @@ import './secondPage.css'
 export default function SecondPage(props) {
 
     const [array, setArray] = useState([]);
-    const [state, setState] = useState(false);
 
     const arr = ['холодос', 'condёr', 'pylesos'];
 
-    const func = () => setState(state => !state);
     const changeArr = (data, status) => {
         if (array.map(el => el.id).includes(data.id)) {
             if (status) {
                 setArray(array => [...array.filter(item => item.id !== data.id), data])
-            }else{
+            } else {
                 setArray(array => [...array.filter(item => item.id !== data.id)])
             }
         } else {
@@ -31,20 +29,22 @@ export default function SecondPage(props) {
                 <ul className='list'>
                     {
                         arr.map((item, index) => {
-                            return <li className='item' key={index}><ListItem dataItem={item} id={index} changeArr={changeArr} status={state} /></li>
+                            return <li className='item' key={index}><ListItem dataName={item} id={index} changeArr={changeArr} /></li>
                         })
                     }
                 </ul>
             </section>
 
             <section className='button'>
-                <Button text={'Расчитать'} func={()=>props.changeComponent(3)}/>
+                {
+                    array.length > 0 ? <Button text={'Расчитать'} func={() => props.changeComponent(3)} /> : <Button text={'Расчитать'} />
+                }
             </section>
         </>
     )
 }
 
-function ListItem({ dataItem, changeArr, id}) {
+function ListItem({ dataName, changeArr, id }) {
 
     const [field, setField] = useState(false);
     const [kVat, setKvat] = useState('');
@@ -52,9 +52,8 @@ function ListItem({ dataItem, changeArr, id}) {
 
 
     useEffect(() => {
-        console.log(field);
-        if (kVat.length > 0 && time.length > 0) {
-            changeArr({ id, kVat, time }, field)
+        if (kVat.match(/^\d+$/) && time.match(/^\d+$/)) {
+            changeArr({ id, dataName , kVat: Number(kVat), time: Number(time)}, field)
         }
     }, [kVat, time, field])
 
@@ -65,8 +64,8 @@ function ListItem({ dataItem, changeArr, id}) {
     return (
         <article className='article'>
             <section>
-                <input type="checkbox" id={dataItem} className='custom-checkbox' onClick={() => change()} />
-                <label htmlFor={dataItem}>{dataItem}</label>
+                <input type="checkbox" id={dataName} className='custom-checkbox' onClick={() => change()} />
+                <label htmlFor={dataName}>{dataName}</label>
             </section>
 
             {field ?
