@@ -1,4 +1,41 @@
 .button {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.button .link {
+    width: 350px;
+    padding: 8px;
+    border: 2px solid #3DEC00;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.button .link:hover {
+    padding: 8px;
+    border: 2px solid #3DEC00;
+    border-radius: 10px;
+    background-color: #3DEC00;
+    color: black;
+    box-shadow: 4px 4px 20px gray;
+}
+
+.title-text {
+    font-size: 16px;
+    letter-spacing: .3px;
+    font-weight: 500;
+}
+
+.title-text h3 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.title-text u {
+    text-align: center;
+    font-weight: 600;
+    margin: 20px 0;
 }

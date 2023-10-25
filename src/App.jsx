@@ -8,14 +8,16 @@ import Footer from './footer/Footer';
 
 function App() {
   const [page, setPage] = useState(0);
+  const [data, setData] = useState([])
 
   const changeComponent = (param) => setPage(param);
+  const getDat = (param) => setData(param)
 
   return (
     <>
       <Header changeComponent={changeComponent} />
       <main className='main'>
-        { page === 0 ? <FirstPage changeComponent={changeComponent}/> : page === 1 ? <SecondPage changeComponent={changeComponent}/> : <ResultPage/> }
+        { page === 0 ? <FirstPage changeComponent={changeComponent}/> : page === 1 ? <SecondPage changeComponent={changeComponent} getDat={getDat}/> : <ResultPage data={data}/> }
       </main>
       <Footer/>
     </>

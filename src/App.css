@@ -1,6 +1,7 @@
 .main {
-    margin: 30px 20px;
+    margin: 30px 110px;
     padding: 15px;
-    background-color: #3DEC00;
     border-radius: 5px;
+    border: 2px solid #3DEC00;
+    box-shadow: 0px 0px 15px  #3DEC00;
 }

@@ -1,12 +1,24 @@
 .header {
     display: flex;
-    background-color: #3DEC00;
+    background-color: #fff;
     justify-content: space-around;
     align-items: center;
-    padding: 10px;
-    margin: 10px 40px;
-    border-radius: 5px;
+    box-shadow: 0px 5px 20px gray;
 }
+
+.Logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.Logo p {
+    margin: 0;
+}
+
 .logo {
     width: 100px;
     border-radius: 90%;

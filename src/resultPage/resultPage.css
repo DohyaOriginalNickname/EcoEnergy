@@ -3,6 +3,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     border: 2px solid black;
+    margin-bottom: 30px;
 }
 
 caption {
@@ -18,4 +19,8 @@ td {
     border: 2px solid black;
     text-align: center;
     letter-spacing: .6px;
+}
+
+.result-text {
+    white-space: pre-wrap;
 }

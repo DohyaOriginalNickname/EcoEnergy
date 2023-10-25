@@ -25,6 +25,7 @@ nav,header,footer,aside{display: block;}
   -webkit-text-size-adjust: 100%;
 } */
 
+body {font-family: Helvetica,sans-serif;}
 input,textarea,button{font-family: inherit;}
 
 input::-ms-clear {display: none;}

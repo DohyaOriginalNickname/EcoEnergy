@@ -1,9 +1,15 @@
 .footer {
     display: flex;
-    background-color: #3DEC00;
-    justify-content: space-around;
+    background-color: #fff;
+    justify-content: left;
+    font-size: 12px;
+    color: gray;
+    opacity: .8;
     align-items: center;
-    padding: 10px;
-    margin: 10px 40px;
-    border-radius: 5px;
+    border-top: 2px solid #3DEC00;
+    min-height: 40px;
+}
+
+.footer section {
+    margin-left: 12px;
 }
